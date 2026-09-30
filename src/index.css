@@ -49,6 +49,12 @@
 }
 
 @layer components {
+  /* A grid cell is as wide as its longest unbreakable line by default, which pushed
+     truncated text past the screen edge on phones. Let cells shrink instead. */
+  .grid > * {
+    min-width: 0;
+  }
+
   .btn {
     @apply inline-flex h-10 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg px-4 text-sm font-medium whitespace-nowrap transition-colors disabled:pointer-events-none disabled:opacity-50;
   }
